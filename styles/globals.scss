@@ -42,7 +42,7 @@ html {
 
 
 .center {
-    height: 100vh;
+    // min-height: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -229,8 +229,8 @@ html {
             outline: none;
             background: none;
             resize: none;
-            padding: 0.5rem 1rem;
-            height: inherit;
+            padding: 0.5rem 0.5rem;
+            height: 3.5rem;
             flex-grow: 3;
             font-family: Red hat Display, sans-serif;
             font-weight: 400;
@@ -245,7 +245,7 @@ html {
             border: none;
             background: none;
             outline: none;
-            padding-right: 1rem;
+            padding: 0 0.5rem;
             width: 3.5rem;
         }
 

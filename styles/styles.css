@@ -129,7 +129,7 @@ html {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   margin: auto;
-  margin-bottom: 1rem;
+  margin: 0.5rem auto;
   color: #999;
   width: -moz-fit-content;
   width: fit-content;
@@ -137,7 +137,7 @@ html {
 .chat .messages .message {
   box-sizing: border-box;
   padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   background: #FFF;
   border-radius: 1.125rem 1.125rem 1.125rem 0;
   min-height: 2.25rem;
@@ -149,7 +149,7 @@ html {
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
 }
 .chat .messages .message.parker {
-  margin: 1rem 0rem 1rem auto;
+  margin: 0rem 0rem 0.2rem auto;
   border-radius: 1.125rem 1.125rem 0 1.125rem;
   background: hsl(233, 36%, 38%);
   color: white;
@@ -201,6 +201,7 @@ html {
   background: none;
   outline: none;
   padding-right: 1rem;
+  width: 3.5rem;
 }
 
 @keyframes typing {
