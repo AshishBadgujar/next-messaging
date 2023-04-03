@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,900&display=swap');
+
+$p: hsl(213deg 85% 97%);
+$s: hsl(233deg 36% 38%);
+$card: hsl(218deg 50% 91%);
+$text-1: $s;
+$text-3: #999;
+$time-bg: hsl(220, 64%, 95%);
+// $time-bg: #EEE;
+$background: $p;
+$font-color: #333;
+// $background: #F7F7F7;
+
+* {
+    padding: 0;
+    margin: 0;
+
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+    }
+}
+
+body,
+html {
+    font-family: Red hat Display, sans-serif;
+    font-weight: 400;
+    line-height: 1.25em;
+    letter-spacing: 0.025em;
+    color: $font-color;
+    background: $card;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+}
+
+
+.center {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 40% 45%;
+}
+
+.pic {
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.contact {
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 5rem;
+    height: 4.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .pic {
+        position: absolute;
+        left: 0;
+    }
+
+    .name {
+        font-weight: 500;
+        margin-bottom: 0.125rem;
+    }
+
+    .message,
+    .seen {
+        font-size: 0.9rem;
+        color: $text-3;
+    }
+
+    .badge {
+        box-sizing: border-box;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        padding-top: 0.125rem;
+        border-radius: 1rem;
+
+        top: 0;
+        left: 2.5rem;
+        background: $text-1;
+        color: white;
+    }
+}
+
+.contacts {
+    overflow-y: auto;
+    height: 80vh;
+    min-height: 32rem;
+
+    padding: 1rem 2rem 1rem 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem 0 0 1rem;
+    background: $p;
+    box-shadow:
+        0 0 8rem 0 rgba(black, 0.1),
+        2rem 2rem 4rem -3rem rgba(black, 0.5);
+
+
+    h2 {
+        margin: 0.5rem 0 1.5rem 5rem;
+        color: $text-1;
+    }
+
+    .contact:last-child {
+        margin: 0;
+    }
+
+}
+
+.chat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: inherit;
+    z-index: 2;
+    box-sizing: border-box;
+    background: $p;
+    box-shadow:
+        0 0 8rem 0 rgba(black, 0.1),
+        0rem 2rem 4rem -3rem rgba(black, 0.5);
+
+    .contact.bar {
+        flex-basis: 3.5rem;
+        flex-shrink: 0;
+        margin: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .messages {
+        padding: 1rem;
+        background: $card;
+        flex-shrink: 2;
+        overflow-y: auto;
+        height: inherit;
+        box-shadow:
+            inset 0 2rem 2rem -2rem rgba(black, 0.05),
+            inset 0 -2rem 2rem -2rem rgba(black, 0.05);
+
+        .time {
+            font-size: 0.8rem;
+            background: $time-bg;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            margin: auto;
+            margin: 0.5rem auto;
+            color: $text-3;
+            width: fit-content;
+        }
+
+        .message {
+            box-sizing: border-box;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.2rem;
+            background: #FFF;
+            border-radius: 1.125rem 1.125rem 1.125rem 0;
+            min-height: 2.25rem;
+            width: fit-content;
+            max-width: 66%;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+
+            box-shadow:
+                0 0 2rem rgba(black, 0.075),
+                0rem 1rem 1rem -1rem rgba(black, 0.1);
+
+            &.parker {
+                margin: 0rem 0rem 0.2rem auto;
+                border-radius: 1.125rem 1.125rem 0 1.125rem;
+                background: $text-1;
+                color: white;
+            }
+
+            .typing {
+                display: inline-block;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin-right: 0rem;
+                box-sizing: border-box;
+                background: #ccc;
+                border-radius: 50%;
+
+                &.typing-1 {
+                    animation: typing 3s infinite
+                }
+
+                &.typing-2 {
+                    animation: typing 3s 250ms infinite
+                }
+
+                &.typing-3 {
+                    animation: typing 3s 500ms infinite
+                }
+            }
+        }
+    }
+
+    .input {
+        box-sizing: border-box;
+        flex-basis: 5rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 0.5rem 0 0.5rem;
+
+        textarea {
+            white-space: pre-wrap;
+            border: none;
+            outline: none;
+            background: none;
+            resize: none;
+            padding: 0.5rem 1rem;
+            height: inherit;
+            flex-grow: 3;
+            font-family: Red hat Display, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+
+            &:placeholder {
+                color: $text-3;
+            }
+        }
+
+        .btn {
+            border: none;
+            background: none;
+            outline: none;
+            padding-right: 1rem;
+            width: 3.5rem;
+        }
+
+    }
+}
+
+
+@keyframes typing {
+
+    0%,
+    75%,
+    100% {
+        transform: translate(0, 0.25rem) scale(0.9);
+        opacity: 0.5;
+    }
+
+    25% {
+        transform: translate(0, -0.25rem) scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .center {
+        grid-template-columns: 40% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .center {
+        grid-template-columns: 0 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .center {
+        grid-template-columns: 0 100%;
+    }
+}
+
+
+
+// Obviously in a real app I would load this from a DB with JS
+// For now this is a nice quick and easy method to mockup

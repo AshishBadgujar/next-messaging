@@ -1,0 +1,85 @@
+@import "globals.scss";
+
+@mixin screen {
+    background-color: $p;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 2em hsl(231deg 62% 94%);
+}
+
+.login-container {
+    background: $card;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.screen-1 {
+    @include screen;
+    gap: 2em;
+    width: 50%;
+
+    background-image: url('/login-cover.svg');
+    background-size: cover;
+
+    .email {
+        background: #ffffffe0;
+        // box-shadow: 0 0 2em hsl(231deg 62% 94%);
+        padding: 1em;
+        gap: 0.5em;
+        border-radius: 20px;
+        color: hsl(0deg 0% 30%);
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+            background: none;
+        }
+    }
+
+    .password {
+        background: #ffffffe0;
+        // box-shadow: 0 0 2em hsl(231deg 62% 94%);
+        padding: 1em;
+        gap: 0.5em;
+        border-radius: 20px;
+        color: hsl(0deg 0% 30%);
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+            background: none;
+        }
+
+        .show-hide {
+            margin-right: -5em;
+        }
+    }
+
+    .login {
+        background: hsl(233deg 36% 38%);
+        color: hsl(0 0 100);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        width: fit-content;
+        padding: 1rem 3rem;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .screen-1 {
+        width: 70%;
+    }
+}
